@@ -203,7 +203,3 @@ for key, value in outfit5.items():
     else:
         print(f"👉 {key.replace('_', ' ').title()}: {value}")
 
-print("\n" + "=" * 70)
-print("💡 TIP: You can test with your own values!")
-print("Example: recommend_outfit(25, 'rainy', 'sports')")
-print("=" * 70)

@@ -12,20 +12,20 @@ def estimate_delivery(distance_km, time_of_day, weather, restaurant_prep_time):
     
     if is_rush_hour:
         speed = base_speed - 10  # Reduce speed by 10 km/hour
-        print(f"⏰ Rush hour detected! Speed reduced to {speed} km/hour")
+        print(f"⏰ Rush hour detected: Speed reduced to {speed} km/hour")
     else:
         speed = base_speed
-        print(f"✅ Normal traffic. Speed: {speed} km/hour")
+        print(f"✅ Normal traffic, Speed: {speed} km/hour")
     
-    #  Check weather conditions and adjust speed further
+    #  Check weather conditions and adjust speed 
     if weather.lower() in ["rain", "snow"]:
         speed = speed - 5  # Reduce speed by 5 km/hour
-        print(f"🌧️ Bad weather ({weather})! Speed reduced to {speed} km/hour")
+        print(f"🌧️ Bad weather ({weather}): Speed reduced to {speed} km/hour")
     
     #  Calculate travel time
     
-    travel_time_hours = distance_km / speed  # Result in hours
-    travel_time_minutes = travel_time_hours * 60  # Convert to minutes
+    travel_time_hours = distance_km / speed  
+    travel_time_minutes = travel_time_hours * 60 
     
     print(f"\n📍 Distance: {distance_km} km")
     print(f"🚗 Travel time: {travel_time_minutes:.1f} minutes")
@@ -40,12 +40,12 @@ def estimate_delivery(distance_km, time_of_day, weather, restaurant_prep_time):
     current_time = datetime.now()  
     delivery_time = current_time + timedelta(minutes=total_time_minutes)
     
-    # Format the time nicely (e.g., "08:30 PM")
+    # Format the time in readable string by strfttime
     delivery_time_formatted = delivery_time.strftime("%I:%M %p")
     
     print(f"🎯 Expected delivery: {delivery_time_formatted}")
     
-    # Return results as a dictionary
+    # Return results in  dictionary format
     return {
         "estimated_minutes": round(total_time_minutes, 1),
         "expected_delivery_time": delivery_time_formatted,

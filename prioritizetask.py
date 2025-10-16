@@ -26,7 +26,7 @@ def prioritize_tasks(tasks):
         print(f"  Deadline: {task['deadline_hours']} hours")
         print(f"  Priority Score: {task['priority_score']:.2f}")
         
-        # Add recommendations based on rank
+        #  recommendations based on rank
         if i == 1:
             print(f"  ⭐ RECOMMENDATION: Do this FIRST!")
         elif i == 2:
